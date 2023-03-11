@@ -281,5 +281,5 @@
     Private Sub Button1_MouseLeave(sender As Object, e As EventArgs) Handles accountingButton.MouseLeave
         accountingButton.BackColor = MenuPanel.BackColor
     End Sub
-
+    'Тестовой сообщение, оно должно отобразиться в репозитории
 End Class

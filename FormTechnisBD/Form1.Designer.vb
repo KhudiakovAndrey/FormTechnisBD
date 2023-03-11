@@ -90,11 +90,11 @@ Partial Class TechnisForm
         Me.TypeTechnisTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.TypeTechnisTableAdapter()
         Me.WorkersTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.WorkersTableAdapter()
         Me.MenuPanel = New System.Windows.Forms.Panel()
-        Me.GerbPictureBox = New System.Windows.Forms.PictureBox()
+        Me.RequestButton = New System.Windows.Forms.Button()
         Me.SettingsButton = New System.Windows.Forms.Button()
         Me.WorkerButton = New System.Windows.Forms.Button()
         Me.accountingButton = New System.Windows.Forms.Button()
-        Me.RequestButton = New System.Windows.Forms.Button()
+        Me.GerbPictureBox = New System.Windows.Forms.PictureBox()
         Me.TechnisGroupBox.SuspendLayout()
         Me.ContextMenu1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -587,14 +587,26 @@ Partial Class TechnisForm
         Me.MenuPanel.Size = New System.Drawing.Size(200, 521)
         Me.MenuPanel.TabIndex = 7
         '
-        'GerbPictureBox
+        'RequestButton
         '
-        Me.GerbPictureBox.Location = New System.Drawing.Point(986, 27)
-        Me.GerbPictureBox.Name = "GerbPictureBox"
-        Me.GerbPictureBox.Size = New System.Drawing.Size(144, 100)
-        Me.GerbPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.GerbPictureBox.TabIndex = 6
-        Me.GerbPictureBox.TabStop = False
+        Me.RequestButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(59, Byte), Integer))
+        Me.RequestButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RequestButton.Cursor = System.Windows.Forms.Cursors.Default
+        Me.RequestButton.FlatAppearance.BorderSize = 0
+        Me.RequestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RequestButton.Font = New System.Drawing.Font("Lucida Sans", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RequestButton.ForeColor = System.Drawing.Color.White
+        Me.RequestButton.Image = Global.FormTechnisBD.My.Resources.Resources.Заявка
+        Me.RequestButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.RequestButton.Location = New System.Drawing.Point(0, 150)
+        Me.RequestButton.Name = "RequestButton"
+        Me.RequestButton.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.RequestButton.Size = New System.Drawing.Size(200, 43)
+        Me.RequestButton.TabIndex = 3
+        Me.RequestButton.Text = "Заявки"
+        Me.RequestButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.RequestButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.RequestButton.UseVisualStyleBackColor = False
         '
         'SettingsButton
         '
@@ -659,26 +671,14 @@ Partial Class TechnisForm
         Me.accountingButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.accountingButton.UseVisualStyleBackColor = False
         '
-        'RequestButton
+        'GerbPictureBox
         '
-        Me.RequestButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(59, Byte), Integer))
-        Me.RequestButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.RequestButton.Cursor = System.Windows.Forms.Cursors.Default
-        Me.RequestButton.FlatAppearance.BorderSize = 0
-        Me.RequestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RequestButton.Font = New System.Drawing.Font("Lucida Sans", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RequestButton.ForeColor = System.Drawing.Color.White
-        Me.RequestButton.Image = Global.FormTechnisBD.My.Resources.Resources.Заявка
-        Me.RequestButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.RequestButton.Location = New System.Drawing.Point(0, 150)
-        Me.RequestButton.Name = "RequestButton"
-        Me.RequestButton.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.RequestButton.Size = New System.Drawing.Size(200, 43)
-        Me.RequestButton.TabIndex = 3
-        Me.RequestButton.Text = "Заявки"
-        Me.RequestButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.RequestButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.RequestButton.UseVisualStyleBackColor = False
+        Me.GerbPictureBox.Location = New System.Drawing.Point(986, 27)
+        Me.GerbPictureBox.Name = "GerbPictureBox"
+        Me.GerbPictureBox.Size = New System.Drawing.Size(144, 100)
+        Me.GerbPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.GerbPictureBox.TabIndex = 6
+        Me.GerbPictureBox.TabStop = False
         '
         'TechnisForm
         '
