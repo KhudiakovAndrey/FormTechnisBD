@@ -159,6 +159,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorizationForm.Designer.vb">
+      <DependentUpon>AuthorizationForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizationForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dialog1.Designer.vb">
       <DependentUpon>Dialog1.vb</DependentUpon>
     </Compile>

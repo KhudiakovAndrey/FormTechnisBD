@@ -7,29 +7,12 @@
     End Sub
 
     Private Sub FillTechnisList()
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.Workers". При необходимости она может быть перемещена или удалена.
-        Me.WorkersTableAdapter.Fill(Me.TechnisBDDataSet.Workers)
         'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.TypeTechnis". При необходимости она может быть перемещена или удалена.
         Me.TypeTechnisTableAdapter.Fill(Me.TechnisBDDataSet.TypeTechnis)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.TypeRequest". При необходимости она может быть перемещена или удалена.
-        Me.TypeRequestTableAdapter.Fill(Me.TechnisBDDataSet.TypeRequest)
         'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.Technis". При необходимости она может быть перемещена или удалена.
         Me.TechnisTableAdapter.Fill(Me.TechnisBDDataSet.Technis)
         'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.StatTechnis". При необходимости она может быть перемещена или удалена.
         Me.StatTechnisTableAdapter.Fill(Me.TechnisBDDataSet.StatTechnis)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.StatRequest". При необходимости она может быть перемещена или удалена.
-        Me.StatRequestTableAdapter.Fill(Me.TechnisBDDataSet.StatRequest)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.Request". При необходимости она может быть перемещена или удалена.
-        Me.RequestTableAdapter.Fill(Me.TechnisBDDataSet.Request)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.Provider". При необходимости она может быть перемещена или удалена.
-        Me.ProviderTableAdapter.Fill(Me.TechnisBDDataSet.Provider)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.ProgressRequest". При необходимости она может быть перемещена или удалена.
-        Me.ProgressRequestTableAdapter.Fill(Me.TechnisBDDataSet.ProgressRequest)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.Posts". При необходимости она может быть перемещена или удалена.
-        Me.PostsTableAdapter.Fill(Me.TechnisBDDataSet.Posts)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.BuyRequest". При необходимости она может быть перемещена или удалена.
-        Me.BuyRequestTableAdapter.Fill(Me.TechnisBDDataSet.BuyRequest)
-        'TODO: данная строка кода позволяет загрузить данные в таблицу "TechnisBDDataSet.Auditorium". При необходимости она может быть перемещена или удалена.
         Me.AuditoriumTableAdapter.Fill(Me.TechnisBDDataSet.Auditorium)
         Dim RowCB As DataRow
         For Each RowCB In Me.TechnisBDDataSet.StatTechnis.Rows  '
@@ -273,13 +256,41 @@
         Form5.ShowDialog()
     End Sub
 
-    Private Sub Button1_MouseHover(sender As Object, e As EventArgs) Handles accountingButton.MouseHover
-        Dim сolor As Color = Color.FromArgb(46, 125, 59)
-        accountingButton.BackColor = сolor
-    End Sub
 
     Private Sub Button1_MouseLeave(sender As Object, e As EventArgs) Handles accountingButton.MouseLeave
         accountingButton.BackColor = MenuPanel.BackColor
     End Sub
-    'Тестовой сообщение, оно должно отобразиться в репозитории
+
+    Private Sub accountingButton_MouseEnter(sender As Object, e As EventArgs) Handles accountingButton.MouseEnter
+        accountingButton.BackColor = Color.FromArgb(46, 125, 59)
+    End Sub
+
+    Private Sub WorkerButton_MouseEnter(sender As Object, e As EventArgs) Handles WorkerButton.MouseEnter
+        WorkerButton.BackColor = Color.FromArgb(46, 125, 59)
+    End Sub
+
+    Private Sub WorkerButton_MouseLeave(sender As Object, e As EventArgs) Handles WorkerButton.MouseLeave
+        WorkerButton.BackColor = MenuPanel.BackColor
+    End Sub
+
+    Private Sub SettingsButton_MouseEnter(sender As Object, e As EventArgs) Handles SettingsButton.MouseEnter
+        SettingsButton.BackColor = Color.FromArgb(46, 125, 59)
+
+    End Sub
+
+    Private Sub SettingsButton_MouseLeave(sender As Object, e As EventArgs) Handles SettingsButton.MouseLeave
+        SettingsButton.BackColor = MenuPanel.BackColor
+    End Sub
+
+    Private Sub RequestButton_MouseEnter(sender As Object, e As EventArgs) Handles RequestButton.MouseEnter
+        RequestButton.BackColor = Color.FromArgb(46, 125, 59)
+    End Sub
+
+    Private Sub RequestButton_MouseLeave(sender As Object, e As EventArgs) Handles RequestButton.MouseLeave
+        RequestButton.BackColor = MenuPanel.BackColor
+    End Sub
+
+    Private Sub WorkerButton_Click(sender As Object, e As EventArgs) Handles WorkerButton.Click
+        Form4.ShowDialog()
+    End Sub
 End Class

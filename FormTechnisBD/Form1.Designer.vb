@@ -23,6 +23,9 @@ Partial Class TechnisForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Me.Tool = New System.Windows.Forms.ToolTip(Me.components)
+        Me.AddTechnisButton = New System.Windows.Forms.Button()
+        Me.DelTechnisButton = New System.Windows.Forms.Button()
         Me.TechnisListView = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -30,8 +33,6 @@ Partial Class TechnisForm
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.AddTechnisButton = New System.Windows.Forms.Button()
-        Me.DelTechnisButton = New System.Windows.Forms.Button()
         Me.TechnisGroupBox = New System.Windows.Forms.GroupBox()
         Me.ContextMenu1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ChangeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -75,34 +76,53 @@ Partial Class TechnisForm
         Me.СправочникиToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ПоискПоСложнымЗапросамToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.СправкаToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TechnisBDDataSet = New FormTechnisBD.TechnisBDDataSet()
-        Me.AuditoriumTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.AuditoriumTableAdapter()
-        Me.TableAdapterManager = New FormTechnisBD.TechnisBDDataSetTableAdapters.TableAdapterManager()
-        Me.BuyRequestTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.BuyRequestTableAdapter()
-        Me.PostsTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.PostsTableAdapter()
-        Me.ProgressRequestTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.ProgressRequestTableAdapter()
-        Me.ProviderTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.ProviderTableAdapter()
-        Me.RequestTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.RequestTableAdapter()
-        Me.StatRequestTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.StatRequestTableAdapter()
-        Me.StatTechnisTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.StatTechnisTableAdapter()
-        Me.TechnisTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.TechnisTableAdapter()
-        Me.TypeRequestTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.TypeRequestTableAdapter()
-        Me.TypeTechnisTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.TypeTechnisTableAdapter()
-        Me.WorkersTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.WorkersTableAdapter()
         Me.MenuPanel = New System.Windows.Forms.Panel()
         Me.RequestButton = New System.Windows.Forms.Button()
         Me.SettingsButton = New System.Windows.Forms.Button()
         Me.WorkerButton = New System.Windows.Forms.Button()
         Me.accountingButton = New System.Windows.Forms.Button()
         Me.GerbPictureBox = New System.Windows.Forms.PictureBox()
+        Me.TechnisBDDataSet = New FormTechnisBD.TechnisBDDataSet()
+        Me.AuditoriumTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.AuditoriumTableAdapter()
+        Me.TableAdapterManager = New FormTechnisBD.TechnisBDDataSetTableAdapters.TableAdapterManager()
+        Me.StatTechnisTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.StatTechnisTableAdapter()
+        Me.TechnisTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.TechnisTableAdapter()
+        Me.TypeTechnisTableAdapter = New FormTechnisBD.TechnisBDDataSetTableAdapters.TypeTechnisTableAdapter()
+        Me.t = New System.Windows.Forms.ToolTip(Me.components)
         Me.TechnisGroupBox.SuspendLayout()
         Me.ContextMenu1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.TechnisBDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuPanel.SuspendLayout()
         CType(Me.GerbPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TechnisBDDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'AddTechnisButton
+        '
+        Me.AddTechnisButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.AddTechnisButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.AddTechnisButton.ForeColor = System.Drawing.Color.MediumSeaGreen
+        Me.AddTechnisButton.Location = New System.Drawing.Point(6, 270)
+        Me.AddTechnisButton.Name = "AddTechnisButton"
+        Me.AddTechnisButton.Size = New System.Drawing.Size(163, 23)
+        Me.AddTechnisButton.TabIndex = 1
+        Me.AddTechnisButton.Text = "Добавить технику"
+        Me.Tool.SetToolTip(Me.AddTechnisButton, "Вызывает диалоговое окно для добавления новой техники")
+        Me.AddTechnisButton.UseVisualStyleBackColor = True
+        '
+        'DelTechnisButton
+        '
+        Me.DelTechnisButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.DelTechnisButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.DelTechnisButton.ForeColor = System.Drawing.Color.Red
+        Me.DelTechnisButton.Location = New System.Drawing.Point(175, 270)
+        Me.DelTechnisButton.Name = "DelTechnisButton"
+        Me.DelTechnisButton.Size = New System.Drawing.Size(223, 23)
+        Me.DelTechnisButton.TabIndex = 2
+        Me.DelTechnisButton.Text = "Удалить помеченную технику"
+        Me.Tool.SetToolTip(Me.DelTechnisButton, "Удаляет техники у которой стоит флажок")
+        Me.DelTechnisButton.UseVisualStyleBackColor = True
         '
         'TechnisListView
         '
@@ -116,7 +136,7 @@ Partial Class TechnisForm
         Me.TechnisListView.HideSelection = False
         Me.TechnisListView.Location = New System.Drawing.Point(6, 19)
         Me.TechnisListView.Name = "TechnisListView"
-        Me.TechnisListView.Size = New System.Drawing.Size(870, 245)
+        Me.TechnisListView.Size = New System.Drawing.Size(874, 245)
         Me.TechnisListView.TabIndex = 0
         Me.TechnisListView.UseCompatibleStateImageBehavior = False
         Me.TechnisListView.View = System.Windows.Forms.View.Details
@@ -151,30 +171,6 @@ Partial Class TechnisForm
         Me.ColumnHeader6.Text = "Модель"
         Me.ColumnHeader6.Width = 280
         '
-        'AddTechnisButton
-        '
-        Me.AddTechnisButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.AddTechnisButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.AddTechnisButton.ForeColor = System.Drawing.Color.MediumSeaGreen
-        Me.AddTechnisButton.Location = New System.Drawing.Point(6, 270)
-        Me.AddTechnisButton.Name = "AddTechnisButton"
-        Me.AddTechnisButton.Size = New System.Drawing.Size(163, 23)
-        Me.AddTechnisButton.TabIndex = 1
-        Me.AddTechnisButton.Text = "Добавить технику"
-        Me.AddTechnisButton.UseVisualStyleBackColor = True
-        '
-        'DelTechnisButton
-        '
-        Me.DelTechnisButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.DelTechnisButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.DelTechnisButton.ForeColor = System.Drawing.Color.Red
-        Me.DelTechnisButton.Location = New System.Drawing.Point(175, 270)
-        Me.DelTechnisButton.Name = "DelTechnisButton"
-        Me.DelTechnisButton.Size = New System.Drawing.Size(223, 23)
-        Me.DelTechnisButton.TabIndex = 2
-        Me.DelTechnisButton.Text = "Удалить помеченную технику"
-        Me.DelTechnisButton.UseVisualStyleBackColor = True
-        '
         'TechnisGroupBox
         '
         Me.TechnisGroupBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -186,12 +182,12 @@ Partial Class TechnisForm
         Me.TechnisGroupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.TechnisGroupBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.TechnisGroupBox.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.TechnisGroupBox.Location = New System.Drawing.Point(244, 133)
+        Me.TechnisGroupBox.Location = New System.Drawing.Point(206, 218)
         Me.TechnisGroupBox.Name = "TechnisGroupBox"
-        Me.TechnisGroupBox.Size = New System.Drawing.Size(886, 302)
+        Me.TechnisGroupBox.Size = New System.Drawing.Size(890, 302)
         Me.TechnisGroupBox.TabIndex = 3
         Me.TechnisGroupBox.TabStop = False
-        Me.TechnisGroupBox.Text = "Просмотр и изменение техники"
+        Me.TechnisGroupBox.Text = "Просмотр техники"
         '
         'ContextMenu1
         '
@@ -218,7 +214,7 @@ Partial Class TechnisForm
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(244, 27)
+        Me.GroupBox1.Location = New System.Drawing.Point(206, 112)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(736, 100)
         Me.GroupBox1.TabIndex = 4
@@ -268,6 +264,7 @@ Partial Class TechnisForm
         Me.ClearFilterButton.Size = New System.Drawing.Size(140, 23)
         Me.ClearFilterButton.TabIndex = 8
         Me.ClearFilterButton.Text = "Очистить фильтр"
+        Me.t.SetToolTip(Me.ClearFilterButton, "Очищает все поля фильтров")
         Me.ClearFilterButton.UseVisualStyleBackColor = True
         '
         'Label4
@@ -276,7 +273,7 @@ Partial Class TechnisForm
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label4.Location = New System.Drawing.Point(13, 23)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 16)
+        Me.Label4.Size = New System.Drawing.Size(54, 16)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Номер:"
         '
@@ -286,7 +283,7 @@ Partial Class TechnisForm
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label3.Location = New System.Drawing.Point(210, 23)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 16)
+        Me.Label3.Size = New System.Drawing.Size(82, 16)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Аудитория:"
         '
@@ -296,7 +293,7 @@ Partial Class TechnisForm
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label2.Location = New System.Drawing.Point(10, 52)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 16)
+        Me.Label2.Size = New System.Drawing.Size(57, 16)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Статус:"
         '
@@ -306,16 +303,16 @@ Partial Class TechnisForm
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.Label1.Location = New System.Drawing.Point(422, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(35, 16)
+        Me.Label1.Size = New System.Drawing.Size(36, 16)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Тип:"
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ФайлToolStripMenuItem, Me.ОбщаяСтруктураToolStripMenuItem, Me.ОтчётыToolStripMenuItem, Me.СправочникиToolStripMenuItem, Me.СправкаToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Location = New System.Drawing.Point(200, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1145, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(908, 24)
         Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -504,76 +501,6 @@ Partial Class TechnisForm
         Me.СправкаToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.СправкаToolStripMenuItem.Text = "Справка"
         '
-        'TechnisBDDataSet
-        '
-        Me.TechnisBDDataSet.DataSetName = "TechnisBDDataSet"
-        Me.TechnisBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'AuditoriumTableAdapter
-        '
-        Me.AuditoriumTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.AuditoriumTableAdapter = Me.AuditoriumTableAdapter
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.BuyRequestTableAdapter = Me.BuyRequestTableAdapter
-        Me.TableAdapterManager.PostsTableAdapter = Me.PostsTableAdapter
-        Me.TableAdapterManager.ProgressRequestTableAdapter = Me.ProgressRequestTableAdapter
-        Me.TableAdapterManager.ProviderTableAdapter = Me.ProviderTableAdapter
-        Me.TableAdapterManager.RequestTableAdapter = Me.RequestTableAdapter
-        Me.TableAdapterManager.StatRequestTableAdapter = Me.StatRequestTableAdapter
-        Me.TableAdapterManager.StatTechnisTableAdapter = Me.StatTechnisTableAdapter
-        Me.TableAdapterManager.TechnisTableAdapter = Me.TechnisTableAdapter
-        Me.TableAdapterManager.TypeRequestTableAdapter = Me.TypeRequestTableAdapter
-        Me.TableAdapterManager.TypeTechnisTableAdapter = Me.TypeTechnisTableAdapter
-        Me.TableAdapterManager.UpdateOrder = FormTechnisBD.TechnisBDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.WorkersTableAdapter = Me.WorkersTableAdapter
-        '
-        'BuyRequestTableAdapter
-        '
-        Me.BuyRequestTableAdapter.ClearBeforeFill = True
-        '
-        'PostsTableAdapter
-        '
-        Me.PostsTableAdapter.ClearBeforeFill = True
-        '
-        'ProgressRequestTableAdapter
-        '
-        Me.ProgressRequestTableAdapter.ClearBeforeFill = True
-        '
-        'ProviderTableAdapter
-        '
-        Me.ProviderTableAdapter.ClearBeforeFill = True
-        '
-        'RequestTableAdapter
-        '
-        Me.RequestTableAdapter.ClearBeforeFill = True
-        '
-        'StatRequestTableAdapter
-        '
-        Me.StatRequestTableAdapter.ClearBeforeFill = True
-        '
-        'StatTechnisTableAdapter
-        '
-        Me.StatTechnisTableAdapter.ClearBeforeFill = True
-        '
-        'TechnisTableAdapter
-        '
-        Me.TechnisTableAdapter.ClearBeforeFill = True
-        '
-        'TypeRequestTableAdapter
-        '
-        Me.TypeRequestTableAdapter.ClearBeforeFill = True
-        '
-        'TypeTechnisTableAdapter
-        '
-        Me.TypeTechnisTableAdapter.ClearBeforeFill = True
-        '
-        'WorkersTableAdapter
-        '
-        Me.WorkersTableAdapter.ClearBeforeFill = True
-        '
         'MenuPanel
         '
         Me.MenuPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(59, Byte), Integer))
@@ -581,10 +508,11 @@ Partial Class TechnisForm
         Me.MenuPanel.Controls.Add(Me.SettingsButton)
         Me.MenuPanel.Controls.Add(Me.WorkerButton)
         Me.MenuPanel.Controls.Add(Me.accountingButton)
+        Me.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
         Me.MenuPanel.Location = New System.Drawing.Point(0, 0)
         Me.MenuPanel.Name = "MenuPanel"
-        Me.MenuPanel.Size = New System.Drawing.Size(200, 521)
+        Me.MenuPanel.Size = New System.Drawing.Size(200, 532)
         Me.MenuPanel.TabIndex = 7
         '
         'RequestButton
@@ -598,7 +526,7 @@ Partial Class TechnisForm
         Me.RequestButton.ForeColor = System.Drawing.Color.White
         Me.RequestButton.Image = Global.FormTechnisBD.My.Resources.Resources.Заявка
         Me.RequestButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.RequestButton.Location = New System.Drawing.Point(0, 150)
+        Me.RequestButton.Location = New System.Drawing.Point(0, 328)
         Me.RequestButton.Name = "RequestButton"
         Me.RequestButton.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.RequestButton.Size = New System.Drawing.Size(200, 43)
@@ -619,7 +547,7 @@ Partial Class TechnisForm
         Me.SettingsButton.ForeColor = System.Drawing.Color.White
         Me.SettingsButton.Image = Global.FormTechnisBD.My.Resources.Resources.Настройка
         Me.SettingsButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.SettingsButton.Location = New System.Drawing.Point(0, 107)
+        Me.SettingsButton.Location = New System.Drawing.Point(0, 368)
         Me.SettingsButton.Name = "SettingsButton"
         Me.SettingsButton.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SettingsButton.Size = New System.Drawing.Size(200, 43)
@@ -640,7 +568,7 @@ Partial Class TechnisForm
         Me.WorkerButton.ForeColor = System.Drawing.Color.White
         Me.WorkerButton.Image = Global.FormTechnisBD.My.Resources.Resources.Кнопка_Сотрудники
         Me.WorkerButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.WorkerButton.Location = New System.Drawing.Point(0, 64)
+        Me.WorkerButton.Location = New System.Drawing.Point(0, 289)
         Me.WorkerButton.Name = "WorkerButton"
         Me.WorkerButton.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.WorkerButton.Size = New System.Drawing.Size(200, 43)
@@ -661,7 +589,7 @@ Partial Class TechnisForm
         Me.accountingButton.ForeColor = System.Drawing.Color.White
         Me.accountingButton.Image = Global.FormTechnisBD.My.Resources.Resources.Кнопка_Бухгалтерия
         Me.accountingButton.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.accountingButton.Location = New System.Drawing.Point(0, 23)
+        Me.accountingButton.Location = New System.Drawing.Point(0, 250)
         Me.accountingButton.Name = "accountingButton"
         Me.accountingButton.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.accountingButton.Size = New System.Drawing.Size(200, 43)
@@ -673,19 +601,57 @@ Partial Class TechnisForm
         '
         'GerbPictureBox
         '
-        Me.GerbPictureBox.Location = New System.Drawing.Point(986, 27)
+        Me.GerbPictureBox.Location = New System.Drawing.Point(953, 112)
         Me.GerbPictureBox.Name = "GerbPictureBox"
         Me.GerbPictureBox.Size = New System.Drawing.Size(144, 100)
         Me.GerbPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.GerbPictureBox.TabIndex = 6
         Me.GerbPictureBox.TabStop = False
         '
+        'TechnisBDDataSet
+        '
+        Me.TechnisBDDataSet.DataSetName = "TechnisBDDataSet"
+        Me.TechnisBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AuditoriumTableAdapter
+        '
+        Me.AuditoriumTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.AuditoriumTableAdapter = Me.AuditoriumTableAdapter
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BuyRequestTableAdapter = Nothing
+        Me.TableAdapterManager.PostsTableAdapter = Nothing
+        Me.TableAdapterManager.ProgressRequestTableAdapter = Nothing
+        Me.TableAdapterManager.ProviderTableAdapter = Nothing
+        Me.TableAdapterManager.RequestTableAdapter = Nothing
+        Me.TableAdapterManager.StatRequestTableAdapter = Nothing
+        Me.TableAdapterManager.StatTechnisTableAdapter = Me.StatTechnisTableAdapter
+        Me.TableAdapterManager.TechnisTableAdapter = Me.TechnisTableAdapter
+        Me.TableAdapterManager.TypeRequestTableAdapter = Nothing
+        Me.TableAdapterManager.TypeTechnisTableAdapter = Me.TypeTechnisTableAdapter
+        Me.TableAdapterManager.UpdateOrder = FormTechnisBD.TechnisBDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.WorkersTableAdapter = Nothing
+        '
+        'StatTechnisTableAdapter
+        '
+        Me.StatTechnisTableAdapter.ClearBeforeFill = True
+        '
+        'TechnisTableAdapter
+        '
+        Me.TechnisTableAdapter.ClearBeforeFill = True
+        '
+        'TypeTechnisTableAdapter
+        '
+        Me.TypeTechnisTableAdapter.ClearBeforeFill = True
+        '
         'TechnisForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1145, 520)
+        Me.ClientSize = New System.Drawing.Size(1108, 532)
         Me.Controls.Add(Me.GerbPictureBox)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -700,9 +666,9 @@ Partial Class TechnisForm
         Me.GroupBox1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.TechnisBDDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuPanel.ResumeLayout(False)
         CType(Me.GerbPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TechnisBDDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -718,17 +684,9 @@ Partial Class TechnisForm
     Friend WithEvents TechnisBDDataSet As TechnisBDDataSet
     Friend WithEvents AuditoriumTableAdapter As TechnisBDDataSetTableAdapters.AuditoriumTableAdapter
     Friend WithEvents TableAdapterManager As TechnisBDDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents BuyRequestTableAdapter As TechnisBDDataSetTableAdapters.BuyRequestTableAdapter
-    Friend WithEvents PostsTableAdapter As TechnisBDDataSetTableAdapters.PostsTableAdapter
-    Friend WithEvents ProgressRequestTableAdapter As TechnisBDDataSetTableAdapters.ProgressRequestTableAdapter
-    Friend WithEvents ProviderTableAdapter As TechnisBDDataSetTableAdapters.ProviderTableAdapter
-    Friend WithEvents RequestTableAdapter As TechnisBDDataSetTableAdapters.RequestTableAdapter
-    Friend WithEvents StatRequestTableAdapter As TechnisBDDataSetTableAdapters.StatRequestTableAdapter
     Friend WithEvents StatTechnisTableAdapter As TechnisBDDataSetTableAdapters.StatTechnisTableAdapter
     Friend WithEvents TechnisTableAdapter As TechnisBDDataSetTableAdapters.TechnisTableAdapter
-    Friend WithEvents TypeRequestTableAdapter As TechnisBDDataSetTableAdapters.TypeRequestTableAdapter
     Friend WithEvents TypeTechnisTableAdapter As TechnisBDDataSetTableAdapters.TypeTechnisTableAdapter
-    Friend WithEvents WorkersTableAdapter As TechnisBDDataSetTableAdapters.WorkersTableAdapter
     Friend WithEvents AddTechnisButton As Button
     Friend WithEvents DelTechnisButton As Button
     Friend WithEvents TechnisGroupBox As GroupBox
@@ -780,4 +738,6 @@ Partial Class TechnisForm
     Friend WithEvents WorkerButton As Button
     Friend WithEvents SettingsButton As Button
     Friend WithEvents RequestButton As Button
+    Friend WithEvents Tool As ToolTip
+    Friend WithEvents t As ToolTip
 End Class
